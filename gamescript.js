@@ -26,10 +26,22 @@ function playRound(playerSelection, computerSelection){
 }
 
 function game(){
-    for (let i = 0; i < 5; i++){
-        console.log("round: " + i);
-        playerSelection = prompt("choose rock, paper, or scissors");
-        computerSelection = getComputerChoice();
+    let playerScore = 0; 
+    for (let i = 0; i < 5;){
+        console.log("round: " + (i+1));
+        const playerSelection = prompt("choose rock, paper, or scissors");
+        let computerSelection = getComputerChoice();
         const result = playRound(playerSelection, computerSelection);
+        
+        if (result.slice(0,7) == "you win") {playerScore ++} 
+        console.log("the computer chose " + computerSelection + ", " + result); 
+
     }
+    console.log("after 5 rounds, your score is : " + playerScore); 
+    if (playerScore >= 3) {
+        console.log("you have " + playerScore + "wins, you are the winner!");}
+    else {
+        console.log("you have " + playerScore + " wins, you are the loser!");}
 }
+
+game(); 
