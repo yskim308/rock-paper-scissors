@@ -31,10 +31,6 @@ function game(){
         console.log("round: " + (i+1));
         const playerSelection = prompt("choose rock, paper, or scissors");
         const check = playerSelection.toLowerCase(); 
-        if (check != 'rock' && check != 'paper' && check != 'scissors'){
-            console.warn("please enter either rock, paper, or scissors!")
-            continue; 
-        }
         let computerSelection = getComputerChoice();
         const result = playRound(playerSelection, computerSelection);
 
