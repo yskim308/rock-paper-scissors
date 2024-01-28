@@ -33,7 +33,7 @@ function game(){
         let computerSelection = getComputerChoice();
         const result = playRound(playerSelection, computerSelection);
 
-        if (result.slice(0,3) == 'tie')
+        if (result.slice(0,3) == 'tie') 
         {
             console.log("you tied! replaying round: " + (i+1))
             continue; 
