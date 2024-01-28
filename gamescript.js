@@ -30,6 +30,11 @@ function game(){
     for (let i = 0; i < 5;){
         console.log("round: " + (i+1));
         const playerSelection = prompt("choose rock, paper, or scissors");
+        const check = playerSelection.toLowerCase(); 
+        if (check != 'rock' && check != 'paper' && check != 'scissors'){
+            console.warn("please enter either rock, paper, or scissors!")
+            continue; 
+        }
         let computerSelection = getComputerChoice();
         const result = playRound(playerSelection, computerSelection);
 
@@ -48,7 +53,7 @@ function game(){
     }
     console.log("after 5 rounds, your score is : " + playerScore); 
     if (playerScore >= 3) {
-        console.log("you have " + playerScore + "wins out of five, you are the winner!");}
+        console.log("you have " + playerScore + " wins out of five, you are the winner!");}
     else {
         console.log("you have " + playerScore + " wins out of five, you are the loser!");}
 }
