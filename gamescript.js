@@ -32,16 +32,25 @@ function game(){
         const playerSelection = prompt("choose rock, paper, or scissors");
         let computerSelection = getComputerChoice();
         const result = playRound(playerSelection, computerSelection);
+
+        if (result.slice(0,3) == 'tie')
+        {
+            console.log("you tied! replaying round: " + (i+1))
+            continue; 
+        }
         
-        if (result.slice(0,7) == "you win") {playerScore ++} 
+        if (result.slice(0,7) == "you win") {
+            playerScore ++;
+        } 
         console.log("the computer chose " + computerSelection + ", " + result); 
+        i++; 
 
     }
     console.log("after 5 rounds, your score is : " + playerScore); 
     if (playerScore >= 3) {
-        console.log("you have " + playerScore + "wins, you are the winner!");}
+        console.log("you have " + playerScore + "wins out of five, you are the winner!");}
     else {
-        console.log("you have " + playerScore + " wins, you are the loser!");}
+        console.log("you have " + playerScore + " wins out of five, you are the loser!");}
 }
 
 game(); 
