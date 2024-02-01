@@ -32,3 +32,10 @@ body{
     align-items: center;
     padding: 30px; 
 }
+
+.lives{
+    font-weight: 800; 
+    padding: 10px; 
+    display: flex;
+    justify-content: space-around;
+}

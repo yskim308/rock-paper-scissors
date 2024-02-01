@@ -26,17 +26,53 @@ function playRound(playerSelection, computerSelection){
 }
 
 function game(){
-    let playerSelection = "";
-    let computerSelection = "";
-    let buttonPressed = false; 
+    let playerSelection, computerSelection, roundResult; 
+    let wins = 0; 
+    let losses =0; 
     const buttons = document.querySelectorAll('button'); 
     buttons.forEach((button)=>{
         button.addEventListener('click', ()=>{
             playerSelection = (button.id); 
             computerSelection = getComputerChoice(); 
+            roundResult = playRound(playerSelection, computerSelection); 
             const display = document.querySelector('#computerSelection'); 
             display.textContent = "the computer chose " + computerSelection + "! " +
-            playRound(playerSelection, computerSelection);
+            roundResult;
+            console.log(roundResult.slice(0, 5));
+
+            if (roundResult.slice(0, 5) == "you w") {
+                wins += 1; 
+                const winContent = document.querySelector('#wins');
+                winContent.textContent = "wins: " + wins;
+            }
+            else if (roundResult.slice(0, 5) == "you l"){
+                losses += 1; 
+                const lossCOntent = document.querySelector('#losses'); 
+                lossCOntent.textContent = "losses: " + losses; 
+            }
+
+
+            if (wins == 5){
+                wins = 0; 
+                losses = 0; 
+                alert("You won five times, you win! Count will restart");
+                const lossCOntent = document.querySelector('#losses'); 
+                lossCOntent.textContent = "losses: " + losses; 
+                const winContent = document.querySelector('#wins');
+                winContent.textContent = "wins: " + wins;
+                display.textContent = "click a button!";
+            }
+            else if (losses == 5){
+                wins = 0; 
+                losses =0;
+                alert("you lost five times, you lose! Count will restart");
+                const lossCOntent = document.querySelector('#losses'); 
+                lossCOntent.textContent = "losses: " + losses; 
+                const winContent = document.querySelector('#wins');
+                winContent.textContent = "wins: " + wins;
+                display.textContent = "click a button!";
+            }
+
         })
     })
 
