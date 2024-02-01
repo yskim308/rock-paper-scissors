@@ -1,5 +1,24 @@
+*{
+    font-family: 'Roboto';
+}
+
 .button-container{
     display: flex; 
     justify-content: center;
     gap: 15px; 
+}
+
+body{
+    margin: 0;
+}
+
+.header{
+    margin: 0;
+    font-size: 36px; 
+    background-color:beige;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    padding: 50px; 
+
 }
