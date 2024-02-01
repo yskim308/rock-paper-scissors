@@ -26,6 +26,21 @@ function playRound(playerSelection, computerSelection){
 }
 
 function game(){
+    let playerSelection = "";
+    let computerSelection = "";
+    let buttonPressed = false; 
+    const buttons = document.querySelectorAll('button'); 
+    buttons.forEach((button)=>{
+        button.addEventListener('click', ()=>{
+            playerSelection = (button.id); 
+            console.log(playerSelection, getComputerChoice())
+            const display = document.querySelector('#computerSelection'); 
+            display.textContent = playRound(playerSelection, getComputerChoice());
+        })
+    })
+
+
+
 }
 
 game(); 
