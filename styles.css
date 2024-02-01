@@ -23,5 +23,12 @@ body{
     justify-content: center;
     align-items: center;
     padding: 50px; 
+}
 
+#computerSelection{
+    font-size: 25px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px; 
 }

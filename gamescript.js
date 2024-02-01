@@ -33,9 +33,10 @@ function game(){
     buttons.forEach((button)=>{
         button.addEventListener('click', ()=>{
             playerSelection = (button.id); 
-            console.log(playerSelection, getComputerChoice())
+            computerSelection = getComputerChoice(); 
             const display = document.querySelector('#computerSelection'); 
-            display.textContent = playRound(playerSelection, getComputerChoice());
+            display.textContent = "the computer chose " + computerSelection + "! " +
+            playRound(playerSelection, computerSelection);
         })
     })
 
